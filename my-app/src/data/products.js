@@ -47,16 +47,19 @@ import Fone from '../assets/images/attachments/fone001.jpg'
         { id: "notebook-002",
             nome: "Notebook Dell", 
             preco: 2500 ,
+            descricao: "Otimo para estudos!"
             imagem: laptop2
         },
         { id: "notebook-003",
             nome: "Notebook Office", 
             preco: 2500 ,
+            descricao: "Otimo para trabalhos intensos!",
             imagem: laptop3
         },
         { id: "teclado-002",
             nome: "Teclado Silence", 
             preco: 350 ,
+            descricao: "Extremamente silencioso!",
             imagem: keyboard3
         },
 
