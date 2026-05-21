@@ -47,7 +47,7 @@ import Fone from '../assets/images/attachments/fone001.jpg'
         { id: "notebook-002",
             nome: "Notebook Dell", 
             preco: 2500 ,
-            descricao: "Otimo para estudos!"
+            descricao: "Otimo para estudos!",
             imagem: laptop2
         },
         { id: "notebook-003",
