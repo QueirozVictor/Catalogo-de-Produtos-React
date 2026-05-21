@@ -1,0 +1,16 @@
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    text-align: center;
+    color: #af00fa;
+    font-size: clamp(1.5rem, 0.8rem + 2vw, 2.5rem);
+    padding: 10px;
+}
+@media (max-width: 450px){
+    .logo{
+        flex-direction: column-reverse;
+    }
+}

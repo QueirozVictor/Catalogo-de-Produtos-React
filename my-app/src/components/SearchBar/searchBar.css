@@ -1,0 +1,11 @@
+.search{
+    display: flex;
+    justify-content: center;
+}
+
+.bar{
+    padding: 5px;
+    border-radius: 5px;
+    font-size: clamp(1rem, 0.2rem + 2vw, 1.8rem);
+    width: 80%;
+}
