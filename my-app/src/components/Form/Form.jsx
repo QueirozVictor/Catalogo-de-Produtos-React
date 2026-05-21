@@ -37,7 +37,7 @@ function Form ({onAddProduct}){
         <div className='formCamp'>
             <div className='formCall'>
                 <h2 className='formTitle'>Adicionar novo produto</h2>
-                <p className='formText'>Ao adicionar um novo produto a lista, ele sera colocado no inicio da lista visivel até ser feita uma busca por produtos.Quando uma busca for feita, o produto adicionado passara a permanecer aos produtos mockados junto a sua categoria.</p>
+                <p className='formText'>Ao adicionar um novo produto a lista, ele será colocado no início da lista visível até ser feita uma busca por produtos.Quando uma busca for feita, o produto adicionado passará a permanecer aos produtos mockados junto a sua categoria.</p>
             </div>
             <form onSubmit={handleSubmit} className='formulario'>
                 <select value={imagem} onChange={(e) => setImagem(e.target.value)} className='form_select'>

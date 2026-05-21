@@ -21,13 +21,13 @@ import Fone from '../assets/images/attachments/fone001.jpg'
         { id: "notebook-001",
             nome: "Notebook Asus", 
             preco: 2500 ,
-            descricao: "Notebook de alta performance",
+            descricao: "Notebook de Alta Performance",
             imagem: laptop
         },
         { id: "mouse-001", 
             nome: "Mouse",
             preco: 80, 
-            descricao: "Mouse ergonomico",
+            descricao: "Mouse Ergonômico",
             imagem: mouse1
         },
     
@@ -46,14 +46,14 @@ import Fone from '../assets/images/attachments/fone001.jpg'
         },
         { id: "notebook-002",
             nome: "Notebook Dell", 
-            preco: 2500 ,
-            descricao: "Otimo para estudos!",
+            preco: 1500 ,
+            descricao: "Ótimo para estudos!",
             imagem: laptop2
         },
         { id: "notebook-003",
             nome: "Notebook Office", 
-            preco: 2500 ,
-            descricao: "Otimo para trabalhos intensos!",
+            preco: 2000 ,
+            descricao: "Ótimo para trabalhos intensos!",
             imagem: laptop3
         },
         { id: "teclado-002",
