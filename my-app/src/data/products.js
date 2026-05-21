@@ -27,18 +27,21 @@ import Fone from '../assets/images/attachments/fone001.jpg'
         { id: "mouse-001", 
             nome: "Mouse",
             preco: 80, 
+            descricao: "Mouse ergonomico",
             imagem: mouse1
         },
     
         { id: "teclado-001",
             nome: "Teclado",
             preco: 150,
+            descricao: "Teclado Gamer",
             imagem: keyboard1
         },
 
         { id: "PC-001",
             nome: "Monitor Office",
             preco: 200,
+            descricao: "Monitor 144hz",
             imagem: monitor1
         },
         { id: "notebook-002",
