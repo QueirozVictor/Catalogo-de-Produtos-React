@@ -1,16 +1,104 @@
-.logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.site-header {
+  border-bottom: 1px solid #e8e1d7;
+  background: rgb(255 255 255 / 0.88);
+  backdrop-filter: blur(14px);
 }
-.title{
-    text-align: center;
-    color: #af00fa;
-    font-size: clamp(1.5rem, 0.8rem + 2vw, 2.5rem);
-    padding: 10px;
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  width: min(100% - 3rem, var(--largura-conteudo));
+  min-height: 94px;
+  margin-inline: auto;
 }
-@media (max-width: 450px){
-    .logo{
-        flex-direction: column-reverse;
+
+.brand {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+.brand img { 
+  display: block; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+}
+
+.site-header__copy {
+   flex: 1; 
+  }
+
+.site-header__eyebrow { 
+  margin: 0 0 0.35rem; 
+  color: var(--cor-laranja-escuro); 
+  font-size: 0.72rem; 
+  font-weight: 700; 
+  letter-spacing: 0.15em; 
+  text-transform: uppercase;
+ }
+
+.site-header h1 { 
+  margin: 0; 
+  color: #262a32; 
+  font-size: clamp(1.3rem, 3vw, 2rem); 
+  letter-spacing: -0.045em; 
+}
+
+.site-header__link { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 0.6rem;
+  color: #575965; 
+  font-size: 0.9rem; 
+  font-weight: 650; 
+  text-decoration: none; 
+  transition: color 160ms ease;
+ }
+
+.site-header__link:hover { 
+  color: var(--cor-laranja-escuro); 
+}
+
+.site-header__link span { 
+  color: var(--cor-laranja); 
+  font-size: 1.2rem; 
+}
+
+@media (max-width: 600px) {
+  .site-header__inner { 
+    width: min(100% - 2rem, var(--largura-conteudo));
+    min-height: 78px; gap: 0.85rem; 
     }
+
+  .brand { 
+    width: 54px; 
+    height: 54px; 
+    border-radius: 14px;
+  }
+
+  .site-header__eyebrow { 
+    font-size: 0.62rem; 
+    letter-spacing: 0.1em;
+  }
+
+  .site-header__link { 
+    width: 40px; 
+    height: 40px; 
+    justify-content: center; 
+    overflow: hidden; 
+    font-size: 0; 
+  }
+
+  .site-header__link span { 
+    font-size: 1.3rem; 
+  }
+}
+@media (max-width: 600px) {
+  .site-header__link-label { 
+    display: none; 
+  }
 }

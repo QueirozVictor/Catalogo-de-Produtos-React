@@ -1,21 +1,20 @@
-import ProductCard from '../productCard/ProductCard'
-import Produtos from '../../data/products'
-import './productList.css'
+import ProductCard from '../productCard/ProductCard';
+import './productList.css';
 
-  function ProductList({ produtos }) {
-    return (
-      <div className='list'>
-        {produtos.map((p) => (
-          <ProductCard
-            key={p.id}
-            nome={p.nome}
-            preco={p.preco}
-            descricao={p.descricao}
-            imagem={p.imagem}
-          />
-        ))}
-      </div>
-    );
-  }
+function ProductList({ produtos }) {
+  return (
+    <div className="list">
+      {produtos.map((produto) => (
+        <ProductCard
+          key={produto.id}
+          nome={produto.nome}
+          preco={produto.preco}
+          descricao={produto.descricao}
+          imagem={produto.imagem}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default ProductList;

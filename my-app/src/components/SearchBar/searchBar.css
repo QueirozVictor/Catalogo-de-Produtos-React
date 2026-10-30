@@ -1,11 +1,24 @@
-.search{
-    display: flex;
-    justify-content: center;
+.search { display: flex; width: 100%; }
+.bar {
+  width: 100%;
+  min-width: 0;
+  min-height: 3.1rem;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  border: 1px solid #ddd6cc;
+  border-radius: 0.75rem;
+  color: #292b32;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23736d66' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.9rem center;
+  background-size: 1.1rem;
+  font-size: 0.95rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
 }
+.bar::placeholder { color: #898680; }
 
-.bar{
-    padding: 5px;
-    border-radius: 5px;
-    font-size: clamp(1rem, 0.2rem + 2vw, 1.8rem);
-    width: 80%;
+.bar:focus { 
+  border-color: var(--cor-laranja); 
+  outline: none; 
+  box-shadow: 0 0 0 3px rgb(230 92 50 / 0.13); 
 }

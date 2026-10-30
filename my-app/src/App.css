@@ -1,8 +1,201 @@
-
-.background{
-    box-shadow: 0 0 10px rgb(0, 221, 255);
-    padding: 10px;
+.store-page {
+  min-height: calc(100vh - 94px);
+  padding: 0 1.5rem 2rem;
 }
-.busca{
-    padding: 10px;
+
+.store-content {
+  width: min(100%, var(--largura-conteudo));
+  margin-inline: auto;
+}
+
+.store-intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.85fr);
+  align-items: end;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  padding: clamp(2.75rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
+  overflow: hidden;
+  border: 1px solid #eed8c4;
+  border-radius: 1.5rem;
+  background: linear-gradient(112deg, #fff6ec 0%, #f9e9d9 58%, #f0e9f8 100%);
+}
+
+.store-intro::after {
+  position: absolute;
+  right: -4rem;
+  bottom: -7rem;
+  width: 17rem;
+  height: 17rem;
+  border: 1px solid rgb(230 92 50 / 0.14);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2rem rgb(230 92 50 / 0.04), 0 0 0 4rem rgb(115 86 168 / 0.035);
+  content: "";
+  pointer-events: none;
+}
+
+.store-intro__copy, .search-panel { position: relative; z-index: 1; }
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--cor-laranja-escuro);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.store-intro h2 {
+  max-width: 700px;
+  margin: 0;
+  color: #252832;
+  font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+  font-weight: 750;
+  line-height: 1.03;
+  letter-spacing: -0.065em;
+}
+
+.store-intro__description {
+  max-width: 37rem;
+  margin: 1.1rem 0 0;
+  color: #69656a;
+  font-size: clamp(1rem, 1.7vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.search-panel {
+  padding: 1rem;
+  border: 1px solid rgb(222 211 197 / 0.9);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 0.88);
+  box-shadow: 0 1rem 2.5rem rgb(69 48 27 / 0.08);
+}
+
+.search-panel > p {
+  margin: 0.65rem 0 0 0.2rem;
+  color: var(--cor-suave);
+  font-size: 0.78rem;
+}
+
+.catalog-section { 
+  padding: 3rem 0 clamp(3rem, 7vw, 5.5rem); 
+  scroll-margin-top: 1.5rem;
+}
+
+.section-heading { 
+  display: flex; 
+  align-items: end; 
+  justify-content: space-between; 
+  gap: 1rem; 
+  margin-bottom: 1.25rem;
+}
+
+.section-heading .eyebrow { 
+  margin-bottom: 0.4rem; 
+  font-size: 0.65rem; 
+}
+
+.section-heading h2 { 
+  margin: 0; 
+  color: #262a32; 
+  font-size: clamp(1.4rem, 3vw, 2rem); 
+  letter-spacing: -0.04em; 
+}
+
+.section-heading__badge {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ded3eb;
+  border-radius: 999px;
+  color: #665284;
+  background: #f4eff9;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.empty-state {
+  padding: 2rem 1rem;
+  border: 1px dashed #d8cfc2;
+  border-radius: 1rem;
+  color: var(--cor-suave);
+  background: rgb(255 255 255 / 0.55);
+  text-align: center;
+}
+
+.store-footer {
+  width: min(100%, var(--largura-conteudo));
+  margin: 0 auto;
+  padding: 1.25rem 0 0.5rem;
+  border-top: 1px solid #e2dbd0;
+  color: #7d7a76;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.store-footer span { 
+  padding-inline: 0.35rem; 
+  color: var(--cor-laranja); 
+}
+
+@media (max-width: 760px) {
+  .store-page { 
+    min-height: calc(100vh - 78px); 
+    padding-inline: 1rem; 
+  }
+
+  .store-intro { 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+    padding-block: 2.5rem 2.75rem; 
+  }
+
+  .catalog-section { 
+    padding-top: 2.5rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .store-intro { 
+    margin-top: 1rem; 
+    padding-inline: 1.2rem; 
+  }
+
+  .section-heading { 
+    align-items: start; 
+    flex-direction: column; 
+  }
+
+  .section-heading__badge { 
+    font-size: 0.68rem; 
+  }
+
+}
+.catalog-actions { 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 1.5rem; 
+}
+
+.catalog-all-link { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 0.65rem; 
+  padding: 0.8rem 1.1rem; 
+  border: 1px solid #e8a17f; 
+  border-radius: 0.75rem; 
+  color: var(--cor-laranja-escuro); 
+  background: #fffaf5; 
+  font-size: 0.9rem; 
+  font-weight: 750; 
+  text-decoration: none; 
+  transition: background-color 160ms ease, transform 160ms ease; 
+}
+
+.catalog-all-link:hover { 
+  transform: translateY(-1px); 
+  background: #fff0e5; 
+}
+
+.catalog-all-link span { 
+  color: var(--cor-laranja); 
+  font-size: 1.1rem; 
 }

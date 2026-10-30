@@ -1,79 +1,87 @@
-.formCamp{
-    display: flex;
-    box-shadow: 0 0 10px rgb(0, 221, 255);
-    border-radius: 5px;
-    padding: 20px 10px;
+.formCamp {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border: 1px solid #e3d9ec;
+  border-radius: 1.25rem;
+  background: linear-gradient(120deg, #fff 0%, #fbf8fd 100%);
+  box-shadow: 0 0.75rem 2rem rgb(67 46 87 / 0.05);
 }
-@media(max-width: 450px){
-    .formCamp{
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
+.formCall { 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  gap: 0.8rem; 
 }
-.formText{
-    color: white;
-    text-align: center;
-    text-wrap: balance;
+
+.formTitle { 
+  margin: 0; 
+  color: #292b32; 
+  font-size: clamp(1.35rem, 3vw, 2rem); 
+  letter-spacing: -0.04em; 
 }
-.formTitle{
-    color: white;
-    text-align: center;
-    font-size: clamp(1rem, 0.4rem + 2vw, 1.8rem);
+
+.formText { 
+  max-width: 38rem; 
+  margin: 0; 
+  color: var(--cor-suave); 
+  font-size: 0.9rem; 
+  line-height: 1.7; 
 }
-.formCall{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 50%;
-    margin-top: 10px;
-    box-shadow: 0 0 10px rgb(179, 0, 255);
-    border-radius: 5px;
-    padding: 10px;
+
+.formulario { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 0.7rem; 
+  align-content: center; 
 }
-@media(max-width:450px){
-    .formCall{
-        width: 100%;
-    }
+
+.form_input, .form_select {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.9rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #ddd6cc;
+  border-radius: 0.7rem;
+  color: #292b32;
+  background: #fff;
+  font-size: 0.88rem;
 }
-.formulario{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    gap: 5px;
-    margin: auto;
+.form_input::placeholder { color: #898680; }
+
+.formulario select option { 
+  color: #292b32; 
+  background: #fff; 
 }
-@media(max-width:450px){
-    .formulario{
-        width: 100%;
-    }
+
+.form_input:focus, .form_select:focus { 
+  border-color: var(--cor-laranja); 
+  outline: none; 
+  box-shadow: 0 0 0 3px rgb(230 92 50 / 0.13); 
 }
-.form_input{
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    
+
+.formButton { 
+  min-height: 2.9rem; 
+  grid-column: 1 / -1; 
+  padding: 0.75rem 1rem; 
+  border: 0; 
+  border-radius: 0.7rem; 
+  color: #fff; 
+  background: var(--cor-laranja); 
+  font-weight: 750; 
+  cursor: pointer; 
+  transition: background-color 160ms ease, transform 160ms ease; 
 }
-.form_select{
-    padding: 5px;
-    border-radius: 5px;
+
+.formButton:hover { 
+  background: var(--cor-laranja-escuro); 
+  transform: translateY(-1px); 
 }
-.formButton{
-    background-color: rgb(73, 3, 103);
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-    margin-top: 5px;
-    font-size: large;
-    font-weight: 600;
-    color: #f1f1f1;
+
+@media (max-width: 680px) {
+  .formCamp { grid-template-columns: 1fr; }
+  .formulario { grid-template-columns: 1fr; }
+  .formButton { grid-column: auto; }
 }
-.formButton:hover{
-    background-color:rgb(144, 4, 203) ;
-    box-shadow: 0 0 8px rgb(0, 221, 255);
-}
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+@media (max-width: 400px) { .formCamp { padding: 1rem; } }

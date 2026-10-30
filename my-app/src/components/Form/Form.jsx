@@ -1,58 +1,57 @@
-import { useState, useEffect } from 'react'
-import PC from '../../assets/images/PC/PC.jpg'
-import Ex01 from '../../assets/images/mouse/mouse-2.jpg'
-import Ex02 from '../../assets/images/keyboard/keyboard2.jpg'
-import './Form.css'
+import { useState } from 'react';
+import PC from '../../assets/images/PC/PC.webp';
+import Ex01 from '../../assets/images/mouse/mouse-2.webp';
+import Ex02 from '../../assets/images/keyboard/keyboard2.webp';
+import './Form.css';
 
-function Form ({onAddProduct}){
-    const [nome, setNome] = useState('')
-    const [preco, setPreco] = useState('')
-    const [imagem, setImagem] = useState('')
-    const [descricao, setDescricao] = useState('')
-    const imagens = {
-        teclado: Ex02,
-        mouse: Ex01,
-        monitor: PC,
-    }
+function Form({ onAddProduct }) {
+  const [nome, setNome] = useState('');
+  const [preco, setPreco] = useState('');
+  const [categoria, setCategoria] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const imagens = { teclados: Ex02, mouse: Ex01, pc: PC };
 
-    function handleSubmit(e) {
-        e.preventDefault()
-
+  function handleSubmit(event) {
+    event.preventDefault();
     const novoProduto = {
-        id: crypto.randomUUID(),
-        nome,
-        descricao,
-        preco,
-        imagem: imagens[imagem]
-    }
-        onAddProduct(novoProduto)
+      id: crypto.randomUUID(),
+      categoria,
+      nome: nome.trim(),
+      descricao: descricao.trim(),
+      preco: Number(preco),
+      imagem: imagens[categoria],
+    };
+    onAddProduct(novoProduto);
+    setNome('');
+    setPreco('');
+    setCategoria('');
+    setDescricao('');
+  }
 
-        setNome('')
-        setPreco('')
-        setImagem('')
-        setDescricao('')
-    }
-
-    return(
-        <div className='formCamp'>
-            <div className='formCall'>
-                <h2 className='formTitle'>Adicionar novo produto</h2>
-                <p className='formText'>Ao adicionar um novo produto a lista, ele será colocado no início da lista visível até ser feita uma busca por produtos.Quando uma busca for feita, o produto adicionado passará a permanecer aos produtos mockados junto a sua categoria.</p>
-            </div>
-            <form onSubmit={handleSubmit} className='formulario'>
-                <select value={imagem} onChange={(e) => setImagem(e.target.value)} className='form_select'>
-                    <option value="">Escolha...</option>
-                    <option value="teclado">Teclado</option>
-                    <option value="mouse">Mouse</option>
-                    <option value="monitor">PC</option>
-                </select>
-                <input type="text" placeholder='Nome:' className='form_input' value={nome} onChange={(e) => setNome(e.target.value)} />
-                <input type="text" placeholder='Descrição:' className='form_input' value={descricao} onChange={(e) => setDescricao(e.target.value)} />
-                <input type="number" placeholder='Preço R$' className='form_input' value={preco} onChange={(e) => setPreco(e.target.value)}/>
-                <button className='formButton' type='submit'>Adicionar</button>
-            </form>
-        </div>
-    )
+  return (
+    <section className="formCamp" aria-labelledby="formTitle">
+      <div className="formCall">
+        <p className="eyebrow">Catálogo colaborativo</p>
+        <h2 className="formTitle" id="formTitle">Adicionar um produto</h2>
+        <p className="formText">
+          Inclua um item de demonstração no catálogo. Os dados ficam disponíveis
+          somente nesta sessão e não são enviados para um servidor.
+        </p>
+      </div>
+      <form onSubmit={handleSubmit} className="formulario">
+        <select aria-label="Categoria do produto" value={categoria} onChange={(event) => setCategoria(event.target.value)} className="form_select" required>
+          <option value="">Categoria</option>
+          <option value="teclados">Teclado</option>
+          <option value="mouse">Mouse</option>
+          <option value="pc">Computador</option>
+        </select>
+        <input type="text" aria-label="Nome do produto" placeholder="Nome do produto" className="form_input" value={nome} onChange={(event) => setNome(event.target.value)} required />
+        <input type="text" aria-label="Descrição do produto" placeholder="Descrição" className="form_input" value={descricao} onChange={(event) => setDescricao(event.target.value)} required />
+        <input type="number" aria-label="Preço em reais" placeholder="Preço (R$)" className="form_input" min="0.01" step="0.01" value={preco} onChange={(event) => setPreco(event.target.value)} required />
+        <button className="formButton" type="submit">Adicionar ao catálogo</button>
+      </form>
+    </section>
+  );
 }
 
 export default Form;

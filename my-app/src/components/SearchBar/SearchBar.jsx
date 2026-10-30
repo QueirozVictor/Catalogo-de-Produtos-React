@@ -1,18 +1,20 @@
-import { useState } from "react";
-import './searchBar.css'
+import { useState } from 'react';
+import './searchBar.css';
 
 function SearchBar({ onSearch }) {
-  const [busca, setBusca] = useState("");
+  const [busca, setBusca] = useState('');
 
   return (
     <div className="search">
-      <input className="bar"
-        type="text"
-        placeholder="Buscar produto..."
+      <input
+        className="bar"
+        type="search"
+        aria-label="Buscar produtos no catálogo"
+        placeholder="Buscar notebooks, periféricos..."
         value={busca}
-        onChange={(e) => {
-          setBusca(e.target.value);
-          onSearch(e.target.value);
+        onChange={(event) => {
+          setBusca(event.target.value);
+          onSearch(event.target.value);
         }}
       />
     </div>
