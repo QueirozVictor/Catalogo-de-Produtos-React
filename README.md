@@ -75,11 +75,3 @@ npm run dev
 ```
 
 Abra no navegador o endereço local apresentado pelo Vite.
-
-Para gerar a versão de produção:
-
-```bash
-npm run build
-```
-
-Para publicar no GitHub Pages, use `npm run deploy` depois de configurar o acesso ao repositório.
